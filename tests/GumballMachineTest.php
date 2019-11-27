@@ -27,7 +27,7 @@ class GumballMachineTest extends PHPUnit_Framework_TestCase
     private $intitule1="IOT";
     private $duree1="10";
     private $id_prof1="XXX2 YYY2";
-    // cours2
+    // cours2        /*� completer*/
     private $intitule2="IA";
     private $duree2="12";
     private $id_prof2="XXX1 YYY1";
@@ -42,7 +42,8 @@ class GumballMachineTest extends PHPUnit_Framework_TestCase
     // Pour update
     // cours5
     private $intitule5="C++";
-    private $duree5="30";
+    private $duree5="30";        /*� completer*/
+
     private $id_prof5="XXX3 YYY3";
 
 
@@ -54,7 +55,8 @@ class GumballMachineTest extends PHPUnit_Framework_TestCase
     public function testAffichageProfAVI()
     {
         $this->assertEquals(true,$this->gumballMachineInstance->AffichageProf("Before Insertion of Professors"));
-    }
+    }        /*� completer*/
+
     public function testInsertP()
     {
         $max__id1=$this->gumballMachineInstance->GetLastIDP();
@@ -65,6 +67,7 @@ class GumballMachineTest extends PHPUnit_Framework_TestCase
         $max__id2=$this->gumballMachineInstance->GetLastIDP();
         $this->assertEquals($max__id1+4,$max__id2);
     }
+
     public function testAffichageProfAPI()
     {
         $this->assertEquals(true,$this->gumballMachineInstance->AffichageProf("After Insertion of Professors"));
@@ -73,8 +76,9 @@ class GumballMachineTest extends PHPUnit_Framework_TestCase
 
     public function testAffichageCoursAVI()
     {
-        /*� completer*/
+        $this->assertEquals(true,$this->gumballMachineInstance->AffichageCours("Before Insertion of Courses"));
     }
+
     public function testInsertC()
     {
         $max__id1=$this->gumballMachineInstance->GetLastIDC();
@@ -85,10 +89,12 @@ class GumballMachineTest extends PHPUnit_Framework_TestCase
         $max__id2=$this->gumballMachineInstance->GetLastIDC();
         $this->assertEquals($max__id1+4,$max__id2);
     }
+
     public function testAffichageCoursAPI()
     {
-        /*� completer*/
+        $this->assertEquals(true,$this->gumballMachineInstance->AffichageCours("Before Insertion of Courses"));
     }
+    /*
     public function testUpdateP()
     {
         $this->assertEquals(true, $this->gumballMachineInstance->UpdateP($this->gumballMachineInstance->getDB(), $this->nom4,$this->prenom4,$this->date_naissance4,"Liverpool", $this->gumballMachineInstance->GetIdP($this->nom3,$this->prenom3)));
@@ -97,17 +103,17 @@ class GumballMachineTest extends PHPUnit_Framework_TestCase
     {
         $this->assertEquals(true,$this->gumballMachineInstance->AffichageProf("After Update of Professors"));
     }
-    /*public function testDProf()
+    public function testDProf()
     {
         $this->assertEquals(true, $this->gumballMachineInstance->deleteP($this->gumballMachineInstance->getDB(), $this->gumballMachineInstance->GetIdP($this->nom4,$this->prenom4)));
     }*/
     public function testUpdateC()
     {
-        $this->assertEquals(true, $this->gumballMachineInstance->UpdateC($this->gumballMachineInstance->getDB(), $this->intitule5,$this->duree5,$this->gumballMachineInstance->GetIdP($this->nom3, $this->prenom3)));
+        $this->assertEquals(true, $this->gumballMachineInstance->UpdateC($this->gumballMachineInstance->getDB(), $this->intitule3,"30",$this->gumballMachineInstance->GetIdP($this->nom3, $this->prenom3)));
     }
-    public function testDCours()
+    /*public function testDCours()
     {
         $this->assertEquals(true, $this->gumballMachineInstance->deleteC($this->gumballMachineInstance->getDB(), $this->intitule2));
-    }
+    }*/
 
 }
