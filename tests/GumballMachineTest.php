@@ -110,7 +110,7 @@ class GumballMachineTest extends PHPUnit_Framework_TestCase
     public function testUpdateC()
     {
        /* $this->assertEquals(true, $this->gumballMachineInstance->UpdateC($this->gumballMachineInstance->getDB(), $this->intitule3,"30",$this->gumballMachineInstance->GetIdP($this->nom3, $this->prenom3)));*/
-        $this->assertEquals(true, $this->gumballMachineInstance->UpdateC($this->gumballMachineInstance->getDB(), $this->intitule3,"55",$this->gumballMachineInstance->GetIdP($this->nom1, $this->prenom1)));
+        $this->assertEquals(true, $this->gumballMachineInstance->UpdateC($this->gumballMachineInstance->getDB(), 'math',"55",$this->gumballMachineInstance->GetIdP($this->nom1, $this->prenom1)));
 
     }
 
