@@ -93,5 +93,22 @@ class GumballMachineTest extends PHPUnit_Framework_TestCase
         /*� completer*/
     }
 
+    public function testUpdateP()
+    {
+        $this->assertEquals(true, $this->gumballMachineInstance->UpdateP($this->gumballMachineInstance->getDB(), $this->nom4bis,$this->prenom4bis,$this->date_naissance4bis,$this->lieu_naissance4bis, $this->gumballMachineInstance->GetIdP($this->nom4,$this->prenom4)));
+    }
+    public function testDProf()
+    {
+        $this->assertEquals(true, $this->gumballMachineInstance->deleteP($this->gumballMachineInstance->getDB(), $this->gumballMachineInstance->GetIdP($this->nom4,$this->prenom4)));
+    }
+
+    public function testUpdateC()
+    {
+        $this->assertEquals(true, $this->gumballMachineInstance->UpdateC($this->gumballMachineInstance->getDB(), $this->intitule5,$this->duree5,$this->gumballMachineInstance->GetIdP($this->nom3, $this->prenom3)));
+    }
+    public function testDCours()
+    {
+        $this->assertEquals(true, $this->gumballMachineInstance->deleteC($this->gumballMachineInstance->getDB(), $this->intitule2));
+    }
    
 }

@@ -37,7 +37,7 @@ class GumballMachine
     }
 	
 	public function AffichageProf($etat)
-	{
+	{Suppr
 	    print("\n".$etat."\n");
 	    $stmt = $this->bdd->prepare("select * from prof");
 	    $stmt->execute();
@@ -118,13 +118,66 @@ class GumballMachine
         return $user['maximum'];
     }
 	
-	public function UpdateP()
+	public function UpdateP($bdd, $nom, $prenom , $date_naissance, $lieu, $id)
 	{
-	    
+        try
+        {
+            $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $sql = "UPDATE prof SET nom='$nom', prenom='$prenom', date_naissance='$date_naissance', lieu_naissance='$lieu' WHERE id = '$id'";
+            $bdd->exec($sql);
+            return true;
+        }
+        catch(PDOException $e)
+        {
+            echo $sql . "<br>" . $e->getMessage();
+            return false;
+        }
 	}
 	
-	public function DeleteP()
+	public function DeleteP($bdd, $id)
 	{
-	    
+        try
+        {
+            $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $sql = "DELETE FROM prof WHERE id = '$id'";
+            $bdd->exec($sql);
+            return true;
+        }
+        catch(PDOException $e)
+        {
+            echo $sql . "<br>" . $e->getMessage();
+            return false;
+        }
 	}
+
+    public function UpdateC($bdd, $intitule, $duree , $id_prof)
+    {
+        try
+        {
+            $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $sql = "UPDATE cours SET intitule='$intitule', duree='$duree', id_prof='$id_prof' WHERE intitule = '$intitule'";
+            $bdd->exec($sql);
+            return true;
+        }
+        catch(PDOException $e)
+        {
+            echo $sql . "<br>" . $e->getMessage();
+            return false;
+        }
+    }
+    public function deleteC($bdd, $intitule)
+    {
+        try
+        {
+            $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $sql = "DELETE FROM cours WHERE intitule='$intitule'";
+            $bdd->exec($sql);
+            return true;
+        }
+        catch(PDOException $e)
+        {
+            echo $sql . "<br>" . $e->getMessage();
+            return false;
+        }
+    }
 }
