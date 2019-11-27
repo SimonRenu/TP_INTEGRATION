@@ -136,7 +136,7 @@ class GumballMachine
 	
 	public function DeleteP($bdd, $id)
 	{
-        try
+        /*try
         {
             $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $sql = "DELETE FROM prof WHERE id = '$id'";
@@ -147,7 +147,7 @@ class GumballMachine
         {
             echo $sql . "<br>" . $e->getMessage();
             return false;
-        }
+        }*/
 	}
 
     public function UpdateC($bdd, $intitule, $duree , $id_prof)
