@@ -1,7 +1,5 @@
 <?php
-
 require 'GumballMachine.php';
-
 class GumballMachineTest extends PHPUnit_Framework_TestCase
 {
     public $gumballMachineInstance;
@@ -25,7 +23,6 @@ class GumballMachineTest extends PHPUnit_Framework_TestCase
     private $prenom4="YYY4";
     private $date_naissance4="1985-12-31";
     private $lieu_naissance4="ZZZ4";
-
     // cours1
     private $intitule1="IOT";
     private $duree1="10";
@@ -47,13 +44,13 @@ class GumballMachineTest extends PHPUnit_Framework_TestCase
     private $intitule5="C++";
     private $duree5="30";
     private $id_prof5="XXX3 YYY3";
-    
-        
+
+
     public function setUp()
     {
         $this->gumballMachineInstance = new GumballMachine();
     }
-    
+
     public function testAffichageProfAVI()
     {
         $this->assertEquals(true,$this->gumballMachineInstance->AffichageProf("Before Insertion of Professors"));
@@ -72,8 +69,8 @@ class GumballMachineTest extends PHPUnit_Framework_TestCase
     {
         /*� completer*/
     }
-     
-    
+
+
     public function testAffichageCoursAVI()
     {
         /*� completer*/
@@ -92,16 +89,14 @@ class GumballMachineTest extends PHPUnit_Framework_TestCase
     {
         /*� completer*/
     }
-
     public function testUpdateP()
     {
-        $this->assertEquals(true, $this->gumballMachineInstance->UpdateP($this->gumballMachineInstance->getDB(), $this->nom4bis,$this->prenom4bis,$this->date_naissance4bis,$this->lieu_naissance4bis, $this->gumballMachineInstance->GetIdP($this->nom4,$this->prenom4)));
+        $this->assertEquals(true, $this->gumballMachineInstance->UpdateP($this->gumballMachineInstance->getDB(), $this->nom4,$this->prenom4,$this->date_naissance4,$this->lieu_naissance4, $this->gumballMachineInstance->GetIdP($this->nom3,$this->prenom3)));
     }
     public function testDProf()
     {
         $this->assertEquals(true, $this->gumballMachineInstance->deleteP($this->gumballMachineInstance->getDB(), $this->gumballMachineInstance->GetIdP($this->nom4,$this->prenom4)));
     }
-
     public function testUpdateC()
     {
         $this->assertEquals(true, $this->gumballMachineInstance->UpdateC($this->gumballMachineInstance->getDB(), $this->intitule5,$this->duree5,$this->gumballMachineInstance->GetIdP($this->nom3, $this->prenom3)));
@@ -110,5 +105,5 @@ class GumballMachineTest extends PHPUnit_Framework_TestCase
     {
         $this->assertEquals(true, $this->gumballMachineInstance->deleteC($this->gumballMachineInstance->getDB(), $this->intitule2));
     }
-   
+
 }
