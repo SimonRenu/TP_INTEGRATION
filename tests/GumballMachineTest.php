@@ -92,7 +92,7 @@ class GumballMachineTest extends PHPUnit_Framework_TestCase
 
     public function testAffichageCoursAPI()
     {
-        $this->assertEquals(true,$this->gumballMachineInstance->AffichageCours("Before Insertion of Courses"));
+        $this->assertEquals(true,$this->gumballMachineInstance->AffichageCours("After Insertion of Courses"));
     }
     /*
     public function testUpdateP()
@@ -111,6 +111,12 @@ class GumballMachineTest extends PHPUnit_Framework_TestCase
     {
         $this->assertEquals(true, $this->gumballMachineInstance->UpdateC($this->gumballMachineInstance->getDB(), $this->intitule3,"30",$this->gumballMachineInstance->GetIdP($this->nom3, $this->prenom3)));
     }
+
+    public function testAffichageCoursAPU()
+    {
+        $this->assertEquals(true,$this->gumballMachineInstance->AffichageCours("After Insertion of Courses"));
+    }
+
     /*public function testDCours()
     {
         $this->assertEquals(true, $this->gumballMachineInstance->deleteC($this->gumballMachineInstance->getDB(), $this->intitule2));
