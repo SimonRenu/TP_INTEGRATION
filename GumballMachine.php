@@ -37,7 +37,7 @@ class GumballMachine
     }
 	
 	public function AffichageProf($etat)
-	{Suppr
+	{
 	    print("\n".$etat."\n");
 	    $stmt = $this->bdd->prepare("select * from prof");
 	    $stmt->execute();
