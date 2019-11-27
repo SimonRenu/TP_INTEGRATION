@@ -67,7 +67,7 @@ class GumballMachineTest extends PHPUnit_Framework_TestCase
     }
     public function testAffichageProfAPI()
     {
-        /*� completer*/
+        $this->assertEquals(true,$this->gumballMachineInstance->AffichageProf("After Insertion of Professors"));
     }
 
 
@@ -91,7 +91,7 @@ class GumballMachineTest extends PHPUnit_Framework_TestCase
     }
     public function testUpdateP()
     {
-        $this->assertEquals(true, $this->gumballMachineInstance->UpdateP($this->gumballMachineInstance->getDB(), $this->nom4,$this->prenom4,$this->date_naissance4,$this->lieu_naissance4, $this->gumballMachineInstance->GetIdP($this->nom3,$this->prenom3)));
+        $this->assertEquals(true, $this->gumballMachineInstance->UpdateP($this->gumballMachineInstance->getDB(), $this->nom4,$this->prenom4,$this->date_naissance4,"Liverpool", $this->gumballMachineInstance->GetIdP($this->nom3,$this->prenom3)));
     }
     /*public function testDProf()
     {
