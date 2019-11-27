@@ -64,7 +64,7 @@ class GumballMachineTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(true,$this->gumballMachineInstance->InsertP($this->gumballMachineInstance->getDB(),$this->nom2,$this->prenom2,$this->date_naissance2,$this->lieu_naissance2));
         $this->assertEquals(true,$this->gumballMachineInstance->InsertP($this->gumballMachineInstance->getDB(),$this->nom3,$this->prenom3,$this->date_naissance3,$this->lieu_naissance3));
         $this->assertEquals(true,$this->gumballMachineInstance->InsertP($this->gumballMachineInstance->getDB(),$this->nom4,$this->prenom4,$this->date_naissance4,$this->lieu_naissance4));
-        $max__id2=$this->gumballMachineInstance->GetLastIDP();
+        $max__id2=$this->guInsertionmballMachineInstance->GetLastIDP();
         $this->assertEquals($max__id1+4,$max__id2);
     }
 
@@ -114,12 +114,17 @@ class GumballMachineTest extends PHPUnit_Framework_TestCase
 
     public function testAffichageCoursAPU()
     {
-        $this->assertEquals(true,$this->gumballMachineInstance->AffichageCours("After Insertion of Courses"));
+        $this->assertEquals(true,$this->gumballMachineInstance->AffichageCours("After Update of Courses"));
     }
 
-    /*public function testDCours()
+    public function testDCours()
     {
         $this->assertEquals(true, $this->gumballMachineInstance->deleteC($this->gumballMachineInstance->getDB(), $this->intitule2));
-    }*/
+    }
+
+    public function testAffichageCoursAPD()
+    {
+        $this->assertEquals(true,$this->gumballMachineInstance->AffichageCours("After Delete of Courses"));
+    }
 
 }
